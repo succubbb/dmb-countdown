@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap');
+
 * {
     /* margin: 0; */
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Caveat', cursive;
+    color: aliceblue;
 }
 
 body {
@@ -14,10 +17,16 @@ body {
     margin: auto;
     height: 100vh;
     background-color: palevioletred;
+    background-image: url("IMG_0865.jpg");
+    background-size: cover;
 }
 
 h2 {
     font-size: 25px;
+}
+
+p {
+    font-size: 20px;
 }
 
 .container {
@@ -27,13 +36,14 @@ h2 {
     height: 400px;
     border-radius: 5%;
     background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
 }
 
 .progress {
     font: 12px Arial, Tahoma, sans-serif;
     position: relative;
     overflow: hidden;
-    width: 80%;
+    margin: -50px 20px;
 }
 
 .progress progress {
@@ -46,7 +56,7 @@ h2 {
 
 .progress-bar {
     overflow: hidden;
-    background: #7654ca;
+    background: #c683c1;
     width: 50px;
     height: 100%;
     position: absolute;
@@ -69,6 +79,20 @@ h2 {
     overflow: hidden;
 }
 
+.progress-bar:after {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .countdown_timer {
     display: flex;
     justify-content: space-between;
@@ -77,4 +101,42 @@ h2 {
 
 .sep {
     font-size: 48px;
+}
+
+.soldat--name {
+    margin-top: 70px;
+}
+
+.address {
+    margin-bottom: 0;
+}
+
+.part--name {
+    margin-top: 0;
+}
+
+@keyframes progress_bar {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -40px 0;
+    }
+}
+
+.progress-bar {
+    transition: width 1s linear;
+}
+
+.progress-bar:after {
+    animation: progress_bar 0.8s linear infinite;
+}
+
+.progress progress[value="1"]+.progress-value:before {
+    content: "1%";
+}
+
+.progress progress[value="1"]~.progress-bg .progress-bar {
+    width: 1%;
 }
