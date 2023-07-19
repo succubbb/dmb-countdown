@@ -3,6 +3,6 @@ import {countdownTimer} from './timer.js';
 
 result(countdownTimer, 1000);
 
-// import {similarPhotos} from './proggress.js';
+// import {progressBar} from './proggress.js';
 
-// similarPhotos();
+// progressBar(500);
